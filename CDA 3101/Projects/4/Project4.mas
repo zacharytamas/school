@@ -1,0 +1,34 @@
+/ CDA 3101 Project 4
+Loop,	Input
+	Skipcond 800
+	Jump Out
+	Store Tmp
+	Subt Max
+	Skipcond 000
+	Jump Check
+Back,	Load Nums
+	Add One
+	Store Nums
+	Load Sum
+	Add Tmp
+	Store Sum
+	Jump Loop
+Check,	Skipcond 400 / if AC is 0 the new value is exactly the max so don't bother setting it
+	Jump NewMax
+	Jump Back
+NewMax,	Load Tmp
+	Store Max
+	Jump Back
+Out,	Load Nums
+	Output
+	Load Sum
+	Output
+	Load Max
+	Output
+	Clear
+	Halt
+Nums,	Dec 0
+Max,	Dec 0
+Sum,	Dec 0
+Tmp,	Dec 0
+One,	Dec 1
